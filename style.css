@@ -1,3 +1,7 @@
+body,head {
+    font-family: Helvetica,Arial, sans-serif;
+}
+
 
 .switch {
     position: relative;
@@ -57,3 +61,18 @@ input:checked + .slider:before {
 .slider.round::before {
     border-radius: 50%;
 }
+
+/* Footer */
+
+footer {
+    font-size: 10px
+}
+
+a {
+    color: blue;
+}
+
+a:hover {
+color: red;
+}
+
