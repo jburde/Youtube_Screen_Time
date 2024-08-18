@@ -2,64 +2,72 @@ body,head {
     font-family: Helvetica,Arial, sans-serif;
 }
 
+html {
+    width: 300px;
+    height: 400px;
+}
 
-.switch {
+
+.onoffswitch {
     position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 15px;
+    width: 60px;
+    -webkit-user-select: none;
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: relative;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb#979797;
-    -webkit-transition: .4s;
-    transition: .4;
-}
-
-.slider:before {
+.onoffswitch-checkbox {
     position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: red;
-    -webkit-transition: .4s;
-    transition: .3s;
+    opacity: 0;
+    pointer-events: none;
 }
 
-input:checked + .slider {
-    background-color: #2196F3;
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px;
+    border-radius: 50px;
 }
 
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translate(26px);
-    transform: translateX(26px);
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin .3s ease-in 0;
 }
 
-.slider.round {
-    border-radius: 34px;
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 25px; padding: 0; line-height: 25px;
+    font-size: 10px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 3.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 32px;
+    border: 2px solid #999999; border-radius: 50px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
 }
 
-.slider.round::before {
-    border-radius: 50%;
+.onoffswitchlabel {
+    
 }
 
 /* Footer */
